@@ -4,11 +4,12 @@ FROM apify/actor-node:22
 COPY package*.json ./
 
 RUN npm --quiet set progress=false \
-  && npm install --omit=dev --omit=optional \
-  && (npm list --omit=dev --all || true)
+  && npm install --include=dev \
+  && (npm list --all || true)
 
 COPY . ./
 
-RUN npm run build
+RUN npm run build \
+  && npm prune --omit=dev --omit=optional
 
 CMD npm run -s start --silent
