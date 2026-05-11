@@ -1,0 +1,25 @@
+{
+  "name": "apify-github-trending",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Apify Actor — GitHub trending + REST API as an MCP-style tool server for LLM agents. Tools: trending_repos, repo_details, user_repos, search_repos. Anonymous calls work; optional token raises rate limit.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/main.js",
+    "test": "vitest run"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "apify": "^3.4.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  }
+}

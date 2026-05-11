@@ -1,0 +1,29 @@
+{
+  "title": "GitHub Trending Tool Server input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "tool": {
+      "title": "Tool to invoke",
+      "type": "string",
+      "editor": "select",
+      "enum": ["trending_repos", "repo_details", "user_repos", "search_repos"],
+      "enumTitles": [
+        "trending_repos — list daily/weekly/monthly trending repos, optionally per language",
+        "repo_details — fetch repo metadata, languages, and top contributors",
+        "user_repos — list a user's public repos",
+        "search_repos — full GitHub repo search"
+      ],
+      "description": "One tool per run. The Actor charges per tool call event.",
+      "default": "trending_repos"
+    },
+    "args": {
+      "title": "Tool arguments",
+      "type": "object",
+      "editor": "json",
+      "description": "JSON args specific to the selected tool. See README.",
+      "example": { "language": "typescript", "since": "daily", "limit": 25 }
+    }
+  },
+  "required": ["tool"]
+}

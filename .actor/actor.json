@@ -1,0 +1,20 @@
+{
+  "actorSpecification": 1,
+  "name": "github-trending-tools",
+  "version": "0.1",
+  "buildTag": "latest",
+  "title": "GitHub Trending Tool Server (MCP-compatible)",
+  "description": "Fetch GitHub trending + repo metadata via tool-style invocations. Pick one tool per run: trending_repos, repo_details (with languages + contributors), user_repos, or search_repos. Anonymous works; optional GITHUB_TOKEN raises rate limit.",
+  "categories": ["DEVELOPER_TOOLS", "AI"],
+  "input": "./input_schema.json",
+  "minMemoryMbytes": 128,
+  "maxMemoryMbytes": 512,
+  "dockerfile": "./Dockerfile",
+  "environmentVariables": {
+    "GITHUB_TOKEN": {
+      "title": "GitHub Personal Access Token (optional)",
+      "description": "Anonymous calls work but are rate-limited (60/h). Add a PAT (no scopes needed for public read) to raise the limit to 5000/h.",
+      "isSecret": true
+    }
+  }
+}
