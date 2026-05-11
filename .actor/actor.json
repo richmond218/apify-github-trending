@@ -9,12 +9,5 @@
   "input": "./input_schema.json",
   "minMemoryMbytes": 128,
   "maxMemoryMbytes": 512,
-  "dockerfile": "./Dockerfile",
-  "environmentVariables": {
-    "GITHUB_TOKEN": {
-      "title": "GitHub Personal Access Token (optional)",
-      "description": "Anonymous calls work but are rate-limited (60/h). Add a PAT (no scopes needed for public read) to raise the limit to 5000/h.",
-      "isSecret": true
-    }
-  }
+  "dockerfile": "./Dockerfile"
 }
